@@ -286,12 +286,13 @@ export const BundlePreview: React.FC<IProps> = (
                             'absolute text-nowrap -top-2.5 right-1/2 translate-x-1/2 flex items-center justify-center text-xs font-semibold text-white w-fit px-4 py-1 rounded-sm',
                             quantity === selectedQuantity ? 'bg-primary' : 'bg-secondary'
                           )}>
-                            Save {discount}%
+
+                            Save {activePlan === 'onetime' && quantity === 1 ? '0' : discount}%
                           </div>
                           <img src={image} alt='product' className='h-16'/>
                           <span className='font-semibold text-secondary text-sm'>
-                    {quantity} {quantity > 1 ? 'bags' : 'bag'}
-                  </span>
+                            {quantity} {quantity > 1 ? 'bags' : 'bag'}
+                         </span>
                         </button>
                       ))}
                     </div>
