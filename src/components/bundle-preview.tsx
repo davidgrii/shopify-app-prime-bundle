@@ -217,8 +217,8 @@ export const BundlePreview: React.FC<IProps> = (
                         {shouldShowOriginalPrice && (
                           <span
                             className={cn('flex items-center justify-center text-xs font-semibold text-white bg-primary w-fit px-3 py-1 rounded-sm')}>
-                    Save {tier.discount}%
-                  </span>
+                            Save {tier.discount}%
+                          </span>
                         )}
                       </div>
                       <p className='text-sm text-secondary/50 font-medium'>{tier.description}</p>
@@ -226,13 +226,14 @@ export const BundlePreview: React.FC<IProps> = (
                   </div>
 
                   <div className='flex flex-col items-end'>
-            <span className='text-4xl font-extrabold text-primary'>
-              ${displayPrice.toFixed(2)}
-            </span>
+                    <span className='text-4xl font-extrabold text-primary'>
+                      ${displayPrice.toFixed(2)}
+                    </span>
+
                     {tier.discount && shouldShowSavingsBadge && (
                       <span className='text-sm text-black/40 font-medium line-through'>
-                ${tier.originalPrice.toFixed(2)}
-              </span>
+                        {activePlan === 'onetime' && activeTierId === 1 ? '0.00' : tier.originalPrice.toFixed(2)}
+                      </span>
                     )}
                   </div>
                 </div>
