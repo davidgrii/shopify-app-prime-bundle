@@ -2,7 +2,7 @@ import {Container} from "@/components/container.tsx";
 import {BundlePreview} from "@/components/bundle-preview.tsx";
 import {BundleSettings} from "@/components/bundle-settings.tsx";
 import {Breadcrumbs} from "@/components/breadcrumbs.tsx";
-import {useState} from "react";
+import React, {useState} from "react";
 import type {IBundleSettings} from "@/types.ts";
 
 function App() {
@@ -143,7 +143,14 @@ function App() {
   const [activePlan, setActivePlan] = useState<'flexible' | 'onetime'>('flexible')
 
   return (
-    <>
+    <div
+      style={{
+        '--color-primary': bundleSettings.colorThemeSettings.accentColor,
+        '--color-background': bundleSettings.colorThemeSettings.backgroundColor,
+        '--color-foreground': bundleSettings.colorThemeSettings.cardBackgroundColor,
+        '--color-secondary': bundleSettings.colorThemeSettings.textColor,
+      } as React.CSSProperties}
+    >
       <Container
         className='my-5'
       >
@@ -165,7 +172,7 @@ function App() {
           />
         </div>
       </Container>
-    </>
+    </div>
   )
 }
 

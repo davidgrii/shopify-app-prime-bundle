@@ -29,7 +29,6 @@ export const BundlePreview: React.FC<IProps> = (
     shouldShowGuarantee,
     shouldShowOriginalPrice,
     shouldShowShareButton,
-    colorThemeSettings,
     layout
   } = settings
 
@@ -58,12 +57,6 @@ export const BundlePreview: React.FC<IProps> = (
   return (
     <div
       className='flex flex-col gap-4 bg-foreground rounded-xl px-4 py-6 w-full shadow max-w-8/12 overflow-y-auto h-fit max-h-[calc(100vh-100px)]'
-      style={{
-        '--color-primary': colorThemeSettings.accentColor,
-        '--color-background': colorThemeSettings.backgroundColor,
-        '--color-foreground': colorThemeSettings.cardBackgroundColor,
-        '--color-secondary': colorThemeSettings.textColor,
-      } as React.CSSProperties}
     >
       <h2 className='text-4xl font-bold text-secondary text-nowrap text-center mb-2 mt-2'>{bundleTitle}</h2>
 
