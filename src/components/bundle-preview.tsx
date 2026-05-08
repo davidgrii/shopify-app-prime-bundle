@@ -89,7 +89,7 @@ export const BundlePreview: React.FC<IProps> = (
               <div>
                 <span className='text-xs font-semibold text-primary block'>Flexible plan:</span>
                 <span className='text-xl font-bold text-secondary'>
-                  {activePlan === 'flexible' ? currentTier.originalPrice.toFixed(2) : '$39.00'}
+                  ${activePlan === 'flexible' ? currentTier.originalPrice.toFixed(2) : '39.00'}
                   <span className='text-xs font-medium text-secondary/50'>per bag</span>
                 </span>
               </div>
@@ -121,7 +121,7 @@ export const BundlePreview: React.FC<IProps> = (
           </div>
 
           <span className='text-sm font-semibold text-secondary'>
-            One-time purchase: <span className='font-bold'>{activePlan === 'onetime' ? currentTier.originalPrice.toFixed(2) : '$49.00'}</span>
+            One-time purchase: <span className='font-bold'>${activePlan === 'onetime' ? currentTier.originalPrice.toFixed(2) : '49.00'}</span>
           </span>
         </button>
       </div>
