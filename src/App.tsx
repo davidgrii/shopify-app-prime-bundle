@@ -144,7 +144,9 @@ function App() {
 
   return (
     <>
-      <Container className='my-5'>
+      <Container
+        className='my-5'
+      >
         <Breadcrumbs/>
 
         <div className='flex gap-4 justify-between'>

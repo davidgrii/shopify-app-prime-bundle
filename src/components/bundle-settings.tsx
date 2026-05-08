@@ -57,7 +57,7 @@ export const BundleSettings: React.FC<IProps> = ({ settings, setSettings, setAct
       className='bg-foreground w-full max-w-4/12 rounded-xl px-4 py-6 shadow flex flex-col gap-6 overflow-y-scroll max-h-[calc(100vh-100px)] overflow-x-hidden'
       style={{
         '--color-primary': colorThemeSettings.accentColor,
-        '--color-background': colorThemeSettings.backgroundColor,
+        // '--color-background': colorThemeSettings.backgroundColor,
         '--color-foreground': colorThemeSettings.cardBackgroundColor,
         '--color-secondary': colorThemeSettings.textColor,
       } as React.CSSProperties}
@@ -134,7 +134,7 @@ export const BundleSettings: React.FC<IProps> = ({ settings, setSettings, setAct
         {[
           { id: 'accentColor', label: 'Accent Color', value: colorThemeSettings.accentColor },
           { id: 'cardBackgroundColor', label: 'Card Color', value: colorThemeSettings.cardBackgroundColor },
-          { id: 'backgroundColor', label: 'Background Color', value: colorThemeSettings.backgroundColor },
+          // { id: 'backgroundColor', label: 'Background Color', value: colorThemeSettings.backgroundColor },
           { id: 'textColor', label: 'Text Color', value: colorThemeSettings.textColor },
         ].map(({ id, label, value }) => (
           <div key={id} className='flex flex-col gap-1.5'>
