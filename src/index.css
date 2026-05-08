@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-background: #eff0f5;
+  --color-foreground: #fff;
+
+  --color-primary: #0098ff;
+  --color-secondary: #0e1b4d;
+
+  --color-border: #97daff;
+  --color-ring: #97daff;
+  --color-input: #0098ff;
+
+  /*--color-pink-01: rgba(53, 13, 42, 0.4);*/
+  /*--color-pink-02: rgba(245, 211, 214, 1);*/
+
+  --color-specials-success: #03cc9c;
+  --color-specials-danger: rgb(236, 57, 66);
+
+  --text-heading-h1: 3.5rem;
+  --text-heading-h1--line-height: 120%;
+  --text-heading-h1--letter-spacing: 0;
+  --text-heading-h1--font-weight: 700;
+
+  --text-heading-h2: 2.5rem;
+  --text-heading-h2--line-height: 120%;
+  --text-heading-h2--letter-spacing: 0;
+  --text-heading-h2--font-weight: 700;
+
+  --text-heading-h3: 1.8rem;
+  --text-heading-h3--line-height: 2.5rem;
+  --text-heading-h3--letter-spacing: 0;
+  --text-heading-h3--font-weight: 700;
+
+  --text-heading-h4: 1.5rem;
+  --text-heading-h4--line-height: 110%;
+  --text-heading-h4--letter-spacing: 0;
+  --text-heading-h4--font-weight: 700;
+
+  --text-heading-h5: 1.375rem;
+  --text-heading-h5--line-height: 110%;
+  --text-heading-h5--letter-spacing: 0;
+  --text-heading-h5--font-weight: 600;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1rem;
+  --text-body-sm--letter-spacing: 0;
+
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.563rem;
+  --text-body-md--letter-spacing: 0;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5rem;
+  --text-body-lg--letter-spacing: 0;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 0.75rem;
+  --text-label--letter-spacing: 0;
+
+  --blur-48: 48px;
+  --shadow: 0px 2px 11px 0px #0000000f;
+
+  --radius: 10px;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+
+body {
+  font-weight: 400;
+  font-family: 'Archivo', sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  box-sizing: border-box;
+
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: #fff;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #dbdadd;
+  border-radius: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #dbdadd;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(90, 90, 90, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: rgba(90, 90, 90, 0.3);
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
