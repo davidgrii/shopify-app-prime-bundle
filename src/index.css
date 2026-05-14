@@ -102,6 +102,9 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 .scrollbar::-webkit-scrollbar {
   width: 4px;
@@ -150,3 +153,16 @@ input[type="number"]::-webkit-inner-spin-button {
   scrollbar-width: none;
 }
 
+.active-plan-bg-image-right {
+  background-image: url('public/active-plan-bg-image-right.webp') !important;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: right;
+}
+
+.active-plan-bg-image-left {
+  background-image: url('public/active-plan-bg-image-left.webp') !important;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left;
+}

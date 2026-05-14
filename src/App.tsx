@@ -7,7 +7,7 @@ import type {IBundleSettings} from "@/types.ts";
 
 function App() {
   const [bundleSettings, setBundleSettings] = useState<IBundleSettings>({
-    bundleTitle: 'Bundle & Save',
+    bundleTitle: 'FOCUS, ENERGY + CALM',
     tiers: [
       {
         id: 1,
@@ -124,6 +124,10 @@ function App() {
         ]
       },
     ],
+    badges: [
+      '25% off regular price', 'never run out of product', 'free shipping', 'skip or cancel anytime'
+    ],
+
     colorThemeSettings: {
       accentColor: '#0098ff',
       cardBackgroundColor: '#ffffff',
@@ -131,12 +135,11 @@ function App() {
       textColor: '#0e1b4d',
     },
 
-    layout: 'compact',
-
     shouldShowSavingsBadge: true,
     shouldShowOriginalPrice: true,
     shouldShowGuarantee: true,
-    shouldShowShareButton: true,
+    shouldShowDeliveryInfo: true,
+    shouldShowInfoBadges: true,
   })
 
   const [activeTierId, setActiveTierId] = useState(1)
@@ -158,7 +161,6 @@ function App() {
 
         <div className='flex gap-4 justify-between'>
           <BundleSettings
-            setActiveTierId={setActiveTierId}
             settings={bundleSettings}
             setSettings={setBundleSettings}
           />

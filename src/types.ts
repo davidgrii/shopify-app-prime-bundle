@@ -6,6 +6,7 @@ export interface IBundleSettings {
   bundleTitle: string
 
   tiers: ITier[]
+  badges: string[]
   colorThemeSettings: {
     accentColor: string
     cardBackgroundColor: string
@@ -13,12 +14,11 @@ export interface IBundleSettings {
     textColor: string
   }
 
-  layout: 'default' | 'compact'
-
   shouldShowSavingsBadge: boolean
   shouldShowOriginalPrice: boolean
   shouldShowGuarantee: boolean
-  shouldShowShareButton: boolean
+  shouldShowDeliveryInfo: boolean
+  shouldShowInfoBadges: boolean
 }
 
 interface ITier {
