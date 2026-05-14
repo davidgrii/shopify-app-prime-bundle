@@ -1,5 +1,5 @@
 import {cn} from "@/components/ui/cn.ts";
-import React from "react";
+import React, {useEffect} from "react";
 import type {IBundleSettings} from "@/types.ts";
 
 interface IProps {
@@ -53,6 +53,10 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
       }
     })
   }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = colorThemeSettings.backgroundColor;
+  }, [colorThemeSettings.backgroundColor]);
 
   return (
     <div
