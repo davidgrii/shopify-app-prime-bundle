@@ -154,14 +154,14 @@ input[type="number"] {
 }
 
 .active-plan-bg-image-right {
-  background-image: url('public/active-plan-bg-image-right.webp') !important;
+  background-image: url('/public/active-plan-bg-image-right.webp') !important;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right;
 }
 
 .active-plan-bg-image-left {
-  background-image: url('public/active-plan-bg-image-left.webp') !important;
+  background-image: url('/public/active-plan-bg-image-left.webp') !important;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: left;
