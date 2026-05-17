@@ -12,7 +12,7 @@ function App() {
       {
         id: 1,
         name: "Rainbow Dust",
-        image: '/public/1bag_img_300x.png',
+        image: '/1bag_img_300x.png',
         quantity: 1,
         badge: '',
         description: "Standard Price",
@@ -23,34 +23,34 @@ function App() {
           {
             id: 'coffee',
             label: 'Coffee',
-            image: '/public/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
+            image: '/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
           },
           {
             id: 'vanilla-cinnamon',
             label: 'Vanilla Cinnamon',
-            image: '/public/1122d0319a64b308cb5a854488fdd444_300x.jpg'
+            image: '/1122d0319a64b308cb5a854488fdd444_300x.jpg'
           },
           {
             id: 'chocolate',
             label: 'Chocolate',
-            image: '/public/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
+            image: '/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
           },
           {
             id: 'strawberry',
             label: 'Strawberry',
-            image: '/public/strawberry_web_300x.jpg'
+            image: '/strawberry_web_300x.jpg'
           },
           {
             id: 'raw-chocolate',
             label: 'Raw Chocolate (Decaf)',
-            image: '/public/raw_choc_300x.jpg'
+            image: '/raw_choc_300x.jpg'
           }
         ]
       },
       {
         id: 2,
         name: "Rainbow Dust",
-        image: '/public/2bag_img_300x.png',
+        image: '/2bag_img_300x.png',
         quantity: 2,
         badge: "Most Popular",
         description: "Buy 2 and Save $20",
@@ -61,34 +61,34 @@ function App() {
           {
             id: 'coffee',
             label: 'Coffee',
-            image: '/public/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
+            image: '/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
           },
           {
             id: 'vanilla-cinnamon',
             label: 'Vanilla Cinnamon',
-            image: '/public/1122d0319a64b308cb5a854488fdd444_300x.jpg'
+            image: '/1122d0319a64b308cb5a854488fdd444_300x.jpg'
           },
           {
             id: 'chocolate',
             label: 'Chocolate',
-            image: '/public/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
+            image: '/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
           },
           {
             id: 'strawberry',
             label: 'Strawberry',
-            image: '/public/strawberry_web_300x.jpg'
+            image: '/strawberry_web_300x.jpg'
           },
           {
             id: 'raw-chocolate',
             label: 'Raw Chocolate (Decaf)',
-            image: '/public/raw_choc_300x.jpg'
+            image: '/raw_choc_300x.jpg'
           }
         ]
       },
       {
         id: 3,
         name: "Rainbow Dust",
-        image: '/public/3bag_img_300x.png',
+        image: '/3bag_img_300x.png',
         quantity: 3,
         badge: "Best Value",
         description: "Buy 3 and Save $25",
@@ -99,27 +99,27 @@ function App() {
           {
             id: 'coffee',
             label: 'Coffee',
-            image: '/public/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
+            image: '/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
           },
           {
             id: 'vanilla-cinnamon',
             label: 'Vanilla Cinnamon',
-            image: '/public/1122d0319a64b308cb5a854488fdd444_300x.jpg'
+            image: '/1122d0319a64b308cb5a854488fdd444_300x.jpg'
           },
           {
             id: 'chocolate',
             label: 'Chocolate',
-            image: '/public/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
+            image: '/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
           },
           {
             id: 'strawberry',
             label: 'Strawberry',
-            image: '/public/strawberry_web_300x.jpg'
+            image: '/strawberry_web_300x.jpg'
           },
           {
             id: 'raw-chocolate',
             label: 'Raw Chocolate (Decaf)',
-            image: '/public/raw_choc_300x.jpg'
+            image: '/raw_choc_300x.jpg'
           }
         ]
       },
