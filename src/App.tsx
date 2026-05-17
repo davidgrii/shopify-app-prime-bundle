@@ -49,7 +49,7 @@ function App() {
       },
       {
         id: 2,
-        name: "Rainbow Dust",
+        name: "Rainbow Dust #2",
         image: '/2bag_img_300x.png',
         quantity: 2,
         badge: "Most Popular",
@@ -87,7 +87,7 @@ function App() {
       },
       {
         id: 3,
-        name: "Rainbow Dust",
+        name: "Rainbow Dust #3",
         image: '/3bag_img_300x.png',
         quantity: 3,
         badge: "Best Value",
@@ -159,7 +159,7 @@ function App() {
       >
         <Breadcrumbs/>
 
-        <div className='flex flex-col-reverse gap-8 justify-between lg:gap-1 lg:flex-row'>
+        <div className='flex flex-col-reverse gap-8 justify-between lg:gap-4 lg:flex-row'>
           <BundleSettings
             settings={bundleSettings}
             setSettings={setBundleSettings}

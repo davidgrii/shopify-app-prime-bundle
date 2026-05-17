@@ -1,4 +1,4 @@
-import {cn} from "@/components/ui/cn.ts";
+import {cn} from "@/utils.ts";
 import React, {useEffect} from "react";
 import type {IBundleSettings} from "@/types.ts";
 

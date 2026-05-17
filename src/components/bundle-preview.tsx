@@ -1,6 +1,6 @@
 import {Icons} from "./icons.tsx";
 import React, {useState} from "react";
-import {cn} from "@/components/ui/cn.ts";
+import {cn} from "@/utils.ts";
 import type {IBundleSettings} from "@/types.ts";
 
 interface IProps {
@@ -49,12 +49,12 @@ export const BundlePreview: React.FC<IProps> = (
 
   return (
     <div
-      className='flex flex-col gap-4 rounded-xl lg:px-4 lg:py-6 w-full overflow-y-auto h-fit lg:max-h-[calc(100vh-100px)] lg:max-w-8/12 xl:max-w-7/12'
+      className='flex flex-col gap-4 rounded-xl lg:py-6 w-full overflow-y-auto h-fit lg:max-h-[calc(100vh-100px)] lg:max-w-8/12 xl:max-w-7/12'
     >
       <h2 className='text-4xl font-bold text-secondary text-nowrap'>{bundleTitle}</h2>
 
       <div className='flex gap-3 -mb-4 relative z-10'>
-        <div className='relative flex-1'>
+        <div className='relative w-full flex-1'>
           <button
             onClick={() => setActivePlan('flexible')}
             className={cn('bg-image-right w-full flex gap-3 items-center h-[93px] overflow-hidden transition-opacity duration-200 rounded-tl-xl px-4 py-3 text-left hover:opacity-100',
@@ -68,19 +68,23 @@ export const BundlePreview: React.FC<IProps> = (
               {activePlan === 'flexible' && <div className='size-[11px] rounded-full bg-primary'/>}
             </div>
 
-            <div className='relative flex items-center w-full pr-13 justify-between'>
+            <div className='relative flex items-start flex-col md:items-center w-full pr-13 justify-between md:flex-row'>
               <div>
                 <span className='text-xs font-semibold text-primary block'>Flexible plan:</span>
 
                 <span className='text-xl font-bold text-secondary'>
-                  ${activePlan === 'flexible' ? currentTier.discountedPrice.toFixed(2) : '39.00'}
-                  <span className='text-xs font-medium text-secondary/50'>per bag</span>
+                  ${(currentTier.originalPrice - currentTier.discount).toFixed(2)}
+                  <span className='text-xs font-medium text-secondary/50 text-nowrap'>per bag</span>
                 </span>
               </div>
 
               <span className='text-xs text-secondary font-semibold'>$1.30/serving</span>
+
               <span
-                className='absolute -top-3 right-13 text-xs font-semibold text-white bg-primary px-3 py-0.5 rounded-sm text-nowrap'>most popular</span>
+                className='hidden absolute -top-3 right-13 text-xs font-semibold text-white bg-primary px-3 py-0.5 rounded-sm text-nowrap md:block'
+              >
+                most popular
+              </span>
             </div>
           </button>
         </div>
@@ -113,7 +117,7 @@ export const BundlePreview: React.FC<IProps> = (
           return (
             <article
               key={tier.id}
-              className={cn('overflow-hidden shadow rounded-b-xl px-5 pt-6 pb-5 flex flex-col gap-3 bg-foreground',
+              className={cn('overflow-hidden shadow rounded-b-xl px-4 md:px-5 pt-6 pb-5 flex flex-col gap-6 bg-foreground',
                 activePlan === 'flexible' ? 'rounded-r-xl' : 'rounded-l-xl'
               )}
             >
@@ -121,21 +125,23 @@ export const BundlePreview: React.FC<IProps> = (
                 <div className='flex items-center gap-2'>
                   <div>
                     <div className='flex items-center gap-2'>
-                      <h3 className='text-4xl font-semibold text-secondary'>{tier.name}</h3>
+                      <h3 className='text-3xl font-semibold text-secondary md:text-4xl'>{tier.name}</h3>
 
                       {shouldShowSavingsBadge && (
                         <span
-                          className={cn('flex items-center justify-center text-xs font-semibold text-white bg-primary w-fit px-3 py-1 rounded-sm')}>
+                          className={cn('hidden items-center justify-center text-xs font-semibold text-white bg-primary w-fit px-3 py-1 rounded-sm md:flex')}
+                        >
                             Save ${tier.discount}
-                          </span>
+                        </span>
                       )}
                     </div>
+
                     <p className='text-sm text-secondary/50 font-medium'>{tier.description}</p>
                   </div>
                 </div>
 
                 <div className='flex flex-col items-end'>
-                    <span className='text-4xl font-extrabold text-primary'>
+                    <span className='text-3xl font-extrabold text-primary md:text-4xl'>
                       ${displayPrice.toFixed(2)}
                     </span>
 
