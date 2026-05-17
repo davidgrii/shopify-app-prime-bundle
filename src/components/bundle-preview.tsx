@@ -36,8 +36,7 @@ export const BundlePreview: React.FC<IProps> = (
   const currentTier = tiers.find(t => t.id === activeTierId)!
   const displayPrice = activePlan === 'onetime'
     ? currentTier.originalPrice
-    : currentTier.discountedPrice
-
+    : (currentTier.originalPrice - currentTier.discount)
 
   const handleQuantityChange = (id: number) => {
     setSelectedQuantity(tiers.find(t => t.id === id)?.quantity ?? 1)
@@ -48,10 +47,9 @@ export const BundlePreview: React.FC<IProps> = (
     setSelectedFlavour(index)
   }
 
-
   return (
     <div
-      className='flex flex-col gap-4 rounded-xl px-4 py-6 w-full max-w-7/12 overflow-y-auto h-fit max-h-[calc(100vh-100px)]'
+      className='flex flex-col gap-4 rounded-xl px-4 py-6 w-full overflow-y-auto h-fit lg:max-h-[calc(100vh-100px)] lg:max-w-7/12'
     >
       <h2 className='text-4xl font-bold text-secondary text-nowrap'>{bundleTitle}</h2>
 
@@ -73,8 +71,9 @@ export const BundlePreview: React.FC<IProps> = (
             <div className='relative flex items-center w-full pr-13 justify-between'>
               <div>
                 <span className='text-xs font-semibold text-primary block'>Flexible plan:</span>
+
                 <span className='text-xl font-bold text-secondary'>
-                  ${activePlan === 'flexible' ? currentTier.originalPrice.toFixed(2) : '39.00'}
+                  ${activePlan === 'flexible' ? currentTier.discountedPrice.toFixed(2) : '39.00'}
                   <span className='text-xs font-medium text-secondary/50'>per bag</span>
                 </span>
               </div>
@@ -88,7 +87,8 @@ export const BundlePreview: React.FC<IProps> = (
 
         <button
           onClick={() => setActivePlan('onetime')}
-          className={cn('flex-1 flex gap-3 items-center justify-center px-4  h-[93px] transition-opacity duration-200 py-3 rounded-tr-xl hover:opacity-100', activePlan !== 'flexible' ? 'active-plan-bg-image-left' : 'opacity-60')}
+          className={cn('flex-1 flex gap-3 items-center justify-center pl-4 h-[93px] transition-opacity duration-200 py-3 rounded-tr-xl hover:opacity-100',
+            activePlan !== 'flexible' ? 'active-plan-bg-image-left' : 'opacity-60')}
         >
           <div className={cn(
             'size-5 rounded-full border-2 flex items-center justify-center shrink-0',
@@ -98,8 +98,11 @@ export const BundlePreview: React.FC<IProps> = (
           </div>
 
           <span className='text-sm font-semibold text-secondary'>
-            One-time purchase: <span
-            className='font-bold'>${activePlan === 'onetime' ? currentTier.originalPrice.toFixed(2) : '49.00'}</span>
+            One-time purchase:
+            <span
+              className='font-bold'
+            >
+              $${activePlan === 'onetime' ? currentTier.originalPrice.toFixed(2) : '49.00'}</span>
           </span>
         </button>
       </div>
@@ -123,7 +126,7 @@ export const BundlePreview: React.FC<IProps> = (
                       {shouldShowSavingsBadge && (
                         <span
                           className={cn('flex items-center justify-center text-xs font-semibold text-white bg-primary w-fit px-3 py-1 rounded-sm')}>
-                            Save {tier.discount}%
+                            Save ${tier.discount}
                           </span>
                       )}
                     </div>
@@ -138,8 +141,8 @@ export const BundlePreview: React.FC<IProps> = (
 
                   {tier.discount && shouldShowOriginalPrice && (
                     <span className='text-sm text-black/40 font-medium line-through'>
-                        {activePlan === 'onetime' && activeTierId === 1 ? '0.00' : tier.originalPrice.toFixed(2)}
-                      </span>
+                      ${activePlan === 'onetime' ? '0.00' : tier.originalPrice.toFixed(2)}
+                    </span>
                   )}
                 </div>
               </div>
@@ -159,13 +162,17 @@ export const BundlePreview: React.FC<IProps> = (
                         }}
                         style={{flex: selectedFlavour === variantIndex ? '2' : '1'}}
                         className={cn(
-                          'flex gap-1 items-center justify-center border-dashed border-3 transition-all bg-foreground duration-300 ease-in-out px-3 py-1 rounded-lg font-medium text-xs w-full',
+                          'flex gap-1 h-14 items-center justify-center border-dashed border-3 transition-all bg-foreground duration-300 ease-in-out px-3 py-1 rounded-lg font-medium text-xs w-full',
                           selectedFlavour === variantIndex
                             ? 'border-primary border-solid text-primary'
                             : 'border-black/10 bg-white text-secondary hover:border-primary'
                         )}
                       >
-                        <img src={image} alt={label} className='h-10'/>
+                        <img
+                          src={image}
+                          alt={label}
+                          className='h-10'
+                        />
                         <span className='block max-w-24 font-semibold text-center'>{label}</span>
                       </button>
                     ))}
@@ -195,7 +202,7 @@ export const BundlePreview: React.FC<IProps> = (
                           quantity === selectedQuantity ? 'bg-primary' : 'bg-secondary'
                         )}
                         >
-                          Save {activePlan === 'onetime' && quantity === 1 ? '0' : discount}%
+                          Save ${activePlan === 'onetime' && quantity === 1 ? '0' : discount}
                         </div>
 
                         <img src={image} alt='product' className='h-10'/>

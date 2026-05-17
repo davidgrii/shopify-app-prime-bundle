@@ -1,6 +1,7 @@
 import {cn} from "@/components/ui/cn.ts";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import type {IBundleSettings} from "@/types.ts";
+import {Icons} from "@/components/icons.tsx";
 
 interface IProps {
   settings: IBundleSettings
@@ -19,6 +20,8 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
     shouldShowInfoBadges
   } = settings
 
+  const [isExpanded, setIsExpanded] = useState(true)
+
   const handleBundleTitleChange = (value: string) => {
     const updatedSettings = {
       ...settings,
@@ -26,6 +29,24 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
     }
 
     setSettings(updatedSettings)
+  }
+
+  const handleDiscountChange = (value: string, tierId: number) => {
+    setSettings({
+      ...settings,
+      tiers: tiers.map((tier) => {
+        return tier.id === tierId ? {...tier, discount: Number(value)} : tier
+      }),
+    })
+  }
+
+  const handleOriginalPriceChange = (value: string, tierId: number) => {
+    setSettings({
+      ...settings,
+      tiers: tiers.map((tier) => {
+        return tier.id === tierId ? {...tier, originalPrice: Number(value)} : tier
+      }),
+    })
   }
 
   const handleTierTitleChange = (value: string, tierId: number) => {
@@ -60,7 +81,9 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
 
   return (
     <div
-      className='bg-foreground w-full max-w-5/12 rounded-xl px-4 py-6 shadow flex flex-col gap-6 overflow-y-scroll max-h-[calc(100vh-100px)] overflow-x-hidden'
+      className={cn('absolute  inset-0 bg-foreground w-full z-50 rounded-xl px-4 py-6 shadow flex flex-col gap-6 overflow-y-scroll overflow-x-hidden max-w-full lg:static lg:max-h-[calc(100vh-100px)] lg:max-w-5/12 ',
+
+      )}
       style={{
         '--color-primary': colorThemeSettings.accentColor,
         '--color-background': colorThemeSettings.backgroundColor,
@@ -68,6 +91,13 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
         '--color-secondary': colorThemeSettings.textColor,
       } as React.CSSProperties}
     >
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className='block rounded-sm bg-primary p-0.5 absolute top-2 right-4 text-white transition-opacity duration-200 hover:opacity-80 md:hidden'
+      >
+        <Icons.close className='stroke-2'/>
+      </button>
+
       <label className='flex flex-col gap-1.5 text-sm font-medium text-secondary/60'>
         <span>
           Bundle Title <span className='text-specials-danger'>*</span>
@@ -83,7 +113,7 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
       <div className='w-full h-px shrink-0 bg-black/5'/>
 
       <div className='flex flex-col gap-3'>
-        <span className='text-sm font-medium text-secondary/60'>Tiers</span>
+        <span className='text-sm font-medium text-secondary/60'>Tiers / Original & Discounted Prices</span>
 
         {tiers.map(({name, id}, i) => (
           <div key={i} className='flex items-center gap-3'>
@@ -99,10 +129,26 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
             <div className='flex items-center gap-1.5 shrink-0'>
               <input
                 type='number'
-                defaultValue={tiers[i].discount}
+                min={1}
+                defaultValue={tiers[i].originalPrice}
+                onChange={(e) => handleOriginalPriceChange(e.target.value, id)}
                 className='border-black/10 bg-transparent px-3 py-2 font-medium text-secondary shadow-[0px_2px_11px_0px_#0000000F] rounded-lg border w-16 h-10 text-sm text-center focus:outline-2 outline-primary'
               />
-              <span className='text-sm text-secondary/50 font-medium'>%</span>
+
+              <span className='text-sm text-secondary/50 font-medium'>-</span>
+            </div>
+
+            <div className='flex items-center gap-1.5 shrink-0'>
+              <input
+                type='number'
+                min={1}
+                max={100}
+                defaultValue={tiers[i].discount}
+                onChange={(e) => handleDiscountChange(e.target.value, id)}
+                className='border-black/10 bg-transparent px-3 py-2 font-medium text-secondary shadow-[0px_2px_11px_0px_#0000000F] rounded-lg border w-16 h-10 text-sm text-center focus:outline-2 outline-primary'
+              />
+
+              <span className='text-sm text-secondary/50 font-medium'>$</span>
             </div>
           </div>
         ))}
@@ -115,7 +161,7 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
 
         {[
           {id: 'accentColor', label: 'Accent Color', value: colorThemeSettings.accentColor},
-          {id: 'cardBackgroundColor', label: 'Card Color', value: colorThemeSettings.cardBackgroundColor},
+          // {id: 'cardBackgroundColor', label: 'Card Color', value: colorThemeSettings.cardBackgroundColor},
           {id: 'backgroundColor', label: 'Background Color', value: colorThemeSettings.backgroundColor},
           {id: 'textColor', label: 'Text Color', value: colorThemeSettings.textColor},
         ].map(({id, label, value}) => (
