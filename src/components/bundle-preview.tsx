@@ -49,7 +49,7 @@ export const BundlePreview: React.FC<IProps> = (
 
   return (
     <div
-      className='flex flex-col gap-4 rounded-xl px-4 py-6 w-full overflow-y-auto h-fit lg:max-h-[calc(100vh-100px)] lg:max-w-7/12'
+      className='flex flex-col gap-4 rounded-xl lg:px-4 lg:py-6 w-full overflow-y-auto h-fit lg:max-h-[calc(100vh-100px)] lg:max-w-8/12 xl:max-w-7/12'
     >
       <h2 className='text-4xl font-bold text-secondary text-nowrap'>{bundleTitle}</h2>
 

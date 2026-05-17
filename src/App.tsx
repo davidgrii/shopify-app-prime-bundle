@@ -159,7 +159,7 @@ function App() {
       >
         <Breadcrumbs/>
 
-        <div className='flex gap-2 justify-between'>
+        <div className='flex flex-col-reverse gap-8 justify-between lg:gap-1 lg:flex-row'>
           <BundleSettings
             settings={bundleSettings}
             setSettings={setBundleSettings}

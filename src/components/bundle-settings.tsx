@@ -1,7 +1,6 @@
 import {cn} from "@/components/ui/cn.ts";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import type {IBundleSettings} from "@/types.ts";
-import {Icons} from "@/components/icons.tsx";
 
 interface IProps {
   settings: IBundleSettings
@@ -19,8 +18,6 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
     shouldShowDeliveryInfo,
     shouldShowInfoBadges
   } = settings
-
-  const [isExpanded, setIsExpanded] = useState(true)
 
   const handleBundleTitleChange = (value: string) => {
     const updatedSettings = {
@@ -81,9 +78,7 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
 
   return (
     <div
-      className={cn('absolute  inset-0 bg-foreground w-full z-50 rounded-xl px-4 py-6 shadow flex flex-col gap-6 overflow-y-scroll overflow-x-hidden max-w-full lg:static lg:max-h-[calc(100vh-100px)] lg:max-w-5/12 ',
-
-      )}
+      className=' bg-foreground w-full z-50 rounded-xl px-4 py-6 shadow flex flex-col gap-6 overflow-y-scroll overflow-x-hidden max-w-full lg:static lg:max-h-[calc(100vh-100px)] lg:min-w-[360px] lg:max-w-4/12 xl:max-w-5/12 '
       style={{
         '--color-primary': colorThemeSettings.accentColor,
         '--color-background': colorThemeSettings.backgroundColor,
@@ -91,13 +86,6 @@ export const BundleSettings: React.FC<IProps> = ({settings, setSettings}) => {
         '--color-secondary': colorThemeSettings.textColor,
       } as React.CSSProperties}
     >
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className='block rounded-sm bg-primary p-0.5 absolute top-2 right-4 text-white transition-opacity duration-200 hover:opacity-80 md:hidden'
-      >
-        <Icons.close className='stroke-2'/>
-      </button>
-
       <label className='flex flex-col gap-1.5 text-sm font-medium text-secondary/60'>
         <span>
           Bundle Title <span className='text-specials-danger'>*</span>
