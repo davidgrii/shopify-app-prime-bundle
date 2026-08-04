@@ -12,7 +12,7 @@ function App() {
       {
         id: 1,
         name: "Rainbow Dust",
-        image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/1bag_img_300x.png?v=1719596057',
+        image: '/1bag_img_300x.png',
         quantity: 1,
         badge: '',
         description: "Standard Price",
@@ -23,34 +23,34 @@ function App() {
           {
             id: 'coffee',
             label: 'Coffee',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/6626cf79f4741b98d7b5d32a7e87540a_300x.webp?v=1719595663'
+            image: '/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
           },
           {
             id: 'vanilla-cinnamon',
             label: 'Vanilla Cinnamon',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/1122d0319a64b308cb5a854488fdd444_300x.webp?v=1719595656'
+            image: '/1122d0319a64b308cb5a854488fdd444_300x.jpg'
           },
           {
             id: 'chocolate',
             label: 'Chocolate',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/e78d5f28b1f6b05900a56d0b9aba2378_300x.webp?v=1719595657'
+            image: '/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
           },
           {
             id: 'strawberry',
             label: 'Strawberry',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/strawberry_web_300x.jpg?v=1721389895'
+            image: '/strawberry_web_300x.jpg'
           },
           {
             id: 'raw-chocolate',
             label: 'Raw Chocolate (Decaf)',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/raw_choc_300x.jpg?v=1723536323'
+            image: '/raw_choc_300x.jpg'
           }
         ]
       },
       {
         id: 2,
-        name: "Rainbow Dust",
-        image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/2bag_img_300x.png?v=1719596058',
+        name: "Rainbow Dust #2",
+        image: '/2bag_img_300x.png',
         quantity: 2,
         badge: "Most Popular",
         description: "Buy 2 and Save $20",
@@ -61,34 +61,34 @@ function App() {
           {
             id: 'coffee',
             label: 'Coffee',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/6626cf79f4741b98d7b5d32a7e87540a_300x.webp?v=1719595663'
+            image: '/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
           },
           {
             id: 'vanilla-cinnamon',
             label: 'Vanilla Cinnamon',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/1122d0319a64b308cb5a854488fdd444_300x.webp?v=1719595656'
+            image: '/1122d0319a64b308cb5a854488fdd444_300x.jpg'
           },
           {
             id: 'chocolate',
             label: 'Chocolate',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/e78d5f28b1f6b05900a56d0b9aba2378_300x.webp?v=1719595657'
+            image: '/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
           },
           {
             id: 'strawberry',
             label: 'Strawberry',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/strawberry_web_300x.jpg?v=1721389895'
+            image: '/strawberry_web_300x.jpg'
           },
           {
             id: 'raw-chocolate',
             label: 'Raw Chocolate (Decaf)',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/raw_choc_300x.jpg?v=1723536323'
+            image: '/raw_choc_300x.jpg'
           }
         ]
       },
       {
         id: 3,
-        name: "Rainbow Dust",
-        image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/3bag_img_300x.png?v=1719596059',
+        name: "Rainbow Dust #3",
+        image: '/3bag_img_300x.png',
         quantity: 3,
         badge: "Best Value",
         description: "Buy 3 and Save $25",
@@ -99,27 +99,27 @@ function App() {
           {
             id: 'coffee',
             label: 'Coffee',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/6626cf79f4741b98d7b5d32a7e87540a_300x.webp?v=1719595663'
+            image: '/6626cf79f4741b98d7b5d32a7e87540a_300x.jpg'
           },
           {
             id: 'vanilla-cinnamon',
             label: 'Vanilla Cinnamon',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/1122d0319a64b308cb5a854488fdd444_300x.webp?v=1719595656'
+            image: '/1122d0319a64b308cb5a854488fdd444_300x.jpg'
           },
           {
             id: 'chocolate',
             label: 'Chocolate',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/e78d5f28b1f6b05900a56d0b9aba2378_300x.webp?v=1719595657'
+            image: '/e78d5f28b1f6b05900a56d0b9aba2378_300x.jpg'
           },
           {
             id: 'strawberry',
             label: 'Strawberry',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/strawberry_web_300x.jpg?v=1721389895'
+            image: '/strawberry_web_300x.jpg'
           },
           {
             id: 'raw-chocolate',
             label: 'Raw Chocolate (Decaf)',
-            image: 'https://web.archive.org/web/20250329191243im_/https://spacegoods.com/cdn/shop/files/raw_choc_300x.jpg?v=1723536323'
+            image: '/raw_choc_300x.jpg'
           }
         ]
       },
@@ -159,7 +159,7 @@ function App() {
       >
         <Breadcrumbs/>
 
-        <div className='flex gap-4 justify-between'>
+        <div className='flex flex-col-reverse gap-8 justify-between lg:gap-4 lg:flex-row'>
           <BundleSettings
             settings={bundleSettings}
             setSettings={setBundleSettings}

@@ -1,6 +1,6 @@
 export const Breadcrumbs = () => {
   return (
-    <div className='flex items-center justify-between mb-5'>
+    <div className='flex items-center justify-between mb-8 lg:mb-5'>
       <div className='flex items-center gap-2 text-sm'>
         <a className='text-secondary/50 font-medium hover:text-secondary transition-colors duration-200 cursor-pointer'>
           Settings

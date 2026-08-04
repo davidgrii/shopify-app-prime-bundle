@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import {cn} from "@/components/ui/cn.ts";
+import {cn} from "@/utils.ts";
 
 interface IProps {
   children?: React.ReactNode;
