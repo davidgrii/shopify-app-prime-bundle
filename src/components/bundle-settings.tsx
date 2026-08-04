@@ -1,6 +1,6 @@
-import {cn} from "@/components/ui/cn.ts";
 import React, {useEffect} from "react";
 import type {IBundleSettings} from "@/types.ts";
+import { cn } from "@/utils.ts";
 
 interface IProps {
   settings: IBundleSettings
